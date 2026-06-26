@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app h1{
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #f8f9fa;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+  text-align: center;
+}
+/* Main Container */
+.stopwatch-container {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+/* Display */
+.display {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 4.2rem;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 110px;
+}
+
+.btn.start {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  color: #0f172a;
+}
+
+.btn.pause {
+  background: linear-gradient(90deg, #eab308, #facc15);
+  color: #0f172a;
+}
+
+.btn.lap {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  color: white;
+}
+
+.btn.reset {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Laps Section */
+.laps {
+  margin-top: 30px;
+  text-align: left;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.laps h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.laps ul {
+  list-style: none;
+}
+
+.laps li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.laps li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lap-time {
+  color: #e2e8f0;
+}
+
+.lap-diff {
+  color: #22c55e;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .stopwatch-container {
+    padding: 35px 20px;
+    margin: 10px;
+  }
+
+  .display {
+    font-size: 3.8rem;
+    letter-spacing: 4px;
+  }
+
+  .controls {
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 380px) {
+  .display {
+    font-size: 3.2rem;
+  }
+}
